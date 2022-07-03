@@ -27,12 +27,13 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background: #00020b;
 }
 #root {
   margin: 0 auto;
-  background: lightgreen;
   display: flex;
   flex-direction: column;
+  background: #00020b;
 }
 .App {
   flex: 1;
