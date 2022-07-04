@@ -10,13 +10,6 @@ export const Chart1 = () => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(
       createEchartsOptions({
-        grid: {
-          x: px(40),
-          y: px(30),
-          x2: px(30),
-          y2: px(60),
-          // containLabel: true,
-        },
         xAxis: {
           data: [
             "兰州新区",
