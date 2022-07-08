@@ -5,15 +5,40 @@ import { px } from "../shared/px";
 
 export const Chart9 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    { age: 0, percent: 0.19 },
+    { age: 18, percent: 0.2 },
+    { age: 28, percent: 0.26 },
+    { age: 38, percent: 0.35 },
+    { age: 48, percent: 0.26 },
+    { age: 58, percent: 0.2 },
+    { age: 68, percent: 0.08 },
+    { age: 78, percent: 0.06 },
+  ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(
+    setInterval(() => {
+      const newData = [
+        { age: 0, percent: Math.random() / 2 },
+        { age: 18, percent: 0.2 },
+        { age: 28, percent: Math.random() / 2 },
+        { age: 38, percent: 0.35 },
+        { age: 48, percent: 0.24 },
+        { age: 58, percent: Math.random() / 2 },
+        { age: 68, percent: 0.08 },
+        { age: 78, percent: Math.random() / 2 },
+      ];
+      x(newData);
+    }, 3000);
+  }, []);
+  const x = (data) => {
+    myChart.current.setOption(
       createEchartsOptions({
         color: "#F7A110",
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: [0, 18, 28, 38, 48, 58, 68, 78],
+          data: data.map((i) => i.age),
           splitLine: { show: true, lineStyle: { color: "#073E78" } },
           axisTick: { show: false },
           axisLine: { show: false },
@@ -32,7 +57,7 @@ export const Chart9 = () => {
         series: [
           {
             type: "line",
-            data: [0.19, 0.2, 0.26, 0.35, 0.26, 0.2, 0.08, 0.06],
+            data: data.map((i) => i.percent),
             symbol: "circle",
             symbolSize: px(12),
             lineStyle: { width: px(2) },
@@ -49,6 +74,10 @@ export const Chart9 = () => {
         ],
       })
     );
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, []);
 
   return (

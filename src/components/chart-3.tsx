@@ -5,6 +5,80 @@ import { px } from "../shared/px";
 
 export const Chart3 = () => {
   const divRef = useRef(null);
+  const data = [
+    {
+      date: 2010,
+      抢劫: 0.01,
+      醉驾: 0.02,
+      盗窃: 0.03,
+      故意杀人: 0.04,
+      故意伤人: 0.05,
+    },
+    {
+      date: 2011,
+      抢劫: 0.02,
+      醉驾: 0.03,
+      盗窃: 0.04,
+      故意杀人: 0.05,
+      故意伤人: 0.06,
+    },
+    {
+      date: 2012,
+      抢劫: 0.03,
+      醉驾: 0.04,
+      盗窃: 0.05,
+      故意杀人: 0.06,
+      故意伤人: 0.07,
+    },
+    {
+      date: 2013,
+      抢劫: 0.04,
+      醉驾: 0.05,
+      盗窃: 0.06,
+      故意杀人: 0.07,
+      故意伤人: 0.08,
+    },
+    {
+      date: 2014,
+      抢劫: 0.05,
+      醉驾: 0.02,
+      盗窃: 0.03,
+      故意杀人: 0.04,
+      故意伤人: 0.05,
+    },
+    {
+      date: 2015,
+      抢劫: 0.06,
+      醉驾: 0.02,
+      盗窃: 0.03,
+      故意杀人: 0.04,
+      故意伤人: 0.05,
+    },
+    {
+      date: 2016,
+      抢劫: 0.07,
+      醉驾: 0.04,
+      盗窃: 0.04,
+      故意杀人: 0.04,
+      故意伤人: 0.04,
+    },
+    {
+      date: 2017,
+      抢劫: 0.08,
+      醉驾: 0.02,
+      盗窃: 0.03,
+      故意杀人: 0.04,
+      故意伤人: 0.05,
+    },
+    {
+      date: 2018,
+      抢劫: 0.09,
+      醉驾: 0.02,
+      盗窃: 0.03,
+      故意杀人: 0.04,
+      故意伤人: 0.05,
+    },
+  ];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(
@@ -25,7 +99,7 @@ export const Chart3 = () => {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+          data: data.map((i) => i.date),
           splitLine: { show: true, lineStyle: { color: "#073E78" } },
           axisTick: { show: false },
           axisLine: { show: false },
@@ -44,37 +118,27 @@ export const Chart3 = () => {
           {
             name: "抢劫",
             type: "line",
-            data: [
-              0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,
-            ].reverse(),
+            data: data.map((i) => i.抢劫).reverse(),
           },
           {
             name: "醉驾",
             type: "line",
-            data: [
-              0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1,
-            ].reverse(),
+            data: data.map((i) => i.醉驾).reverse(),
           },
           {
             name: "盗窃",
             type: "line",
-            data: [
-              0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11,
-            ].reverse(),
+            data: data.map((i) => i.盗窃).reverse(),
           },
           {
             name: "故意杀人",
             type: "line",
-            data: [
-              0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12,
-            ].reverse(),
+            data: data.map((i) => i.故意杀人).reverse(),
           },
           {
             name: "故意伤人",
             type: "line",
-            data: [
-              0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13,
-            ].reverse(),
+            data: data.map((i) => i.故意伤人).reverse(),
           },
         ].map((obj) => ({
           ...obj,

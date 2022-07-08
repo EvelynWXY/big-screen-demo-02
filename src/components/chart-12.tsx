@@ -5,6 +5,7 @@ import { px } from "../shared/px";
 
 export const Chart12 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
   const data = [
     { value: 0.08, name: "东岗路" },
     { value: 0.06, name: "段家滩" },
@@ -17,8 +18,23 @@ export const Chart12 = () => {
     { value: 0.08, name: "天水路" },
   ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(
+    setInterval(() => {
+      const newData = [
+        { value: Math.random() * 0.1, name: "东岗路" },
+        { value: 0.06, name: "段家滩" },
+        { value: 0.13, name: "雁北" },
+        { value: Math.random() * 0.1, name: "五泉山" },
+        { value: 0.16, name: "中山路" },
+        { value: 0.06, name: "庆阳路" },
+        { value: Math.random() * 0.1, name: "武都路" },
+        { value: 0.05, name: "酒泉路" },
+        { value: Math.random() * 0.1, name: "天水路" },
+      ];
+      x(newData);
+    }, 4000);
+  }, []);
+  const x = (data) => {
+    myChart.current.setOption(
       createEchartsOptions({
         xAxis: { show: false },
         yAxis: { show: false },
@@ -31,7 +47,8 @@ export const Chart12 = () => {
           itemWidth: px(10),
           itemHeight: px(10),
           formatter(name) {
-            const value = data.find((i) => i.name === name)?.value * 100 + "%";
+            const value =
+              (data.find((i) => i.name === name)?.value * 100).toFixed(0) + "%";
             return name + " " + value;
           },
         },
@@ -54,6 +71,10 @@ export const Chart12 = () => {
         ],
       })
     );
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, []);
 
   return (
