@@ -10,7 +10,7 @@ export const Chart7 = () => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(
       createEchartsOptions({
-        color: ["#8D70F8", "#33A4FA"],
+        color: ["#B3844A", "#3D94A2"],
         xAxis: { show: false },
         yAxis: { show: false },
         legend: { show: false },

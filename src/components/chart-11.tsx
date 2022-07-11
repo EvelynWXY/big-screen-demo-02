@@ -5,7 +5,16 @@ import { px } from "../shared/px";
 
 export const Chart11 = () => {
   const divRef = useRef(null);
-  const colors = ["#F46064", "#F38E1C", "#1CDB7C", "#8D70F8", "#33A4FA"];
+  const colors = [
+    "#F46064",
+    "#F38E1C",
+    "#ff9568",
+    "#1CDB7C",
+    "#8D70F8",
+    "#33A4FA",
+    "#61f9b3",
+    "#7c21ff",
+  ];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(
@@ -26,7 +35,7 @@ export const Chart11 = () => {
               textStyle: { color: "white", fontSize: px(20) },
               distanceToLabelLine: 0,
               formatter(options) {
-                return options.value * 100 + "%";
+                return (options.value * 100).toFixed(0) + "%";
               },
             },
             labelLine: { show: true, length: 0 },
@@ -36,10 +45,11 @@ export const Chart11 = () => {
               shadowColor: "rgba(0, 0, 0, 0.5)",
             },
             data: [
-              { value: 0.36, name: "刑事案件" },
-              { value: 0.2, name: "民事案件" },
-              { value: 0.18, name: "经济案件" },
-              { value: 0.24, name: "其他案件" },
+              { value: 0.12, name: "民事" },
+              { value: 0.2, name: "行政" },
+              { value: 0.18, name: "经济" },
+              { value: 0.24, name: "刑事" },
+              { value: 0.36, name: "其他" },
             ],
           },
         ],
@@ -54,12 +64,14 @@ export const Chart11 = () => {
       </div>
       <div className="legend">
         <span style={{ background: colors[0] }} />
-        刑事
-        <span style={{ background: colors[1] }} />
         民事
+        <span style={{ background: colors[1] }} />
+        行政
         <span style={{ background: colors[2] }} />
         经济
         <span style={{ background: colors[3] }} />
+        刑事
+        <span style={{ background: colors[4] }} />
         其他
       </div>
     </div>

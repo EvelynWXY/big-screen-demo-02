@@ -19,34 +19,34 @@ export const Chart5 = () => {
         </thead>
         <tbody>
           <tr>
-            <td>2019</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
+            <td className="selected">2019</td>
+            <td className="selected">2</td>
+            <td className="selected">3</td>
+            <td className="selected">4</td>
+            <td className="selected">5</td>
+            <td className="selected">6</td>
+            <td className="selected">7</td>
+            <td className="selected">8</td>
           </tr>
           <tr>
-            <td>2020</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
+            <td className="unselected">2020</td>
+            <td className="unselected">2</td>
+            <td className="unselected">3</td>
+            <td className="unselected">4</td>
+            <td className="unselected">5</td>
+            <td className="unselected">6</td>
+            <td className="unselected">7</td>
+            <td className="unselected">8</td>
           </tr>
           <tr>
-            <td>2021</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
+            <td className="selected">2021</td>
+            <td className="selected">2</td>
+            <td className="selected">3</td>
+            <td className="selected">4</td>
+            <td className="selected">5</td>
+            <td className="selected">6</td>
+            <td className="selected">7</td>
+            <td className="selected">8</td>
           </tr>
         </tbody>
       </table>

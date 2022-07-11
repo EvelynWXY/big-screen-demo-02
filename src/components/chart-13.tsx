@@ -73,11 +73,11 @@ export const Chart13 = () => {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 0,
-                color: "#0A97FB",
+                color: "#d2d29e",
               },
               {
                 offset: 1,
-                color: "#1E34FA",
+                color: "#141d29",
               },
             ]),
           },

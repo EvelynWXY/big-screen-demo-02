@@ -7,36 +7,24 @@ export const Chart2 = () => {
   const divRef = useRef(null);
   const myChart = useRef(null);
   const data = [
-    { name: "城关区公安局", 2020: 2, 2021: 3 },
-    { name: "七里河区公安局", 2020: 2, 2021: 3 },
-    { name: "西固区公安局", 2020: 2, 2021: 3 },
-    { name: "安宁区公安局", 2020: 2, 2021: 3 },
-    { name: "红古区公安局", 2020: 2, 2021: 3 },
-    { name: "永登县公安局", 2020: 2, 2021: 3 },
-    { name: "皋兰县公安局", 2020: 2, 2021: 3 },
-    { name: "榆中县公安局", 2020: 2, 2021: 3 },
-    { name: "新区公安局", 2020: 2, 2021: 3 },
+    { name: "其他", 2020: 2, 2021: 3 },
+    { name: "行政", 2020: 2, 2021: 3 },
+    { name: "经济", 2020: 2, 2021: 3 },
+    { name: "刑事", 2020: 2, 2021: 3 },
+    { name: "民事", 2020: 2, 2021: 3 },
   ];
   useEffect(() => {
     setInterval(() => {
       const newData = [
+        { name: "其他", 2020: 2, 2021: Math.random() * 10 },
+        { name: "行政", 2020: 2, 2021: Math.random() * 10 },
+        { name: "经济", 2020: 2, 2021: 3 },
         {
-          name: "城关区公安局",
+          name: "刑事",
           2020: Math.random() * 10,
           2021: Math.random() * 10,
         },
-        { name: "七里河区公安局", 2020: 2, 2021: Math.random() * 10 },
-        { name: "西固区公安局", 2020: 2, 2021: Math.random() * 10 },
-        { name: "安宁区公安局", 2020: 2, 2021: 3 },
-        {
-          name: "红古区公安局",
-          2020: Math.random() * 10,
-          2021: Math.random() * 10,
-        },
-        { name: "永登县公安局", 2020: 2, 2021: 3 },
-        { name: "皋兰县公安局", 2020: Math.random() * 10, 2021: 3 },
-        { name: "榆中县公安局", 2020: 2, 2021: 3 },
-        { name: "新区公安局", 2020: 2, 2021: Math.random() * 10 },
+        { name: "民事", 2020: 2, 2021: 3 },
       ];
       x(newData);
     }, 3000);
@@ -78,12 +66,12 @@ export const Chart2 = () => {
                   [
                     {
                       offset: 0,
-                      color: "#2034f9", // 0% 处的颜色
+                      color: "#01315c", // 0% 处的颜色
                     },
 
                     {
                       offset: 1,
-                      color: "#04a1ff", // 100% 处的颜色
+                      color: "#00649f", // 100% 处的颜色
                     },
                   ],
                   false
@@ -105,12 +93,12 @@ export const Chart2 = () => {
                   [
                     {
                       offset: 0,
-                      color: "#b92ae8", // 0% 处的颜色
+                      color: "#3b3937", // 0% 处的颜色
                     },
 
                     {
                       offset: 1,
-                      color: "#6773e7", // 100% 处的颜色
+                      color: "#907a48", // 100% 处的颜色
                     },
                   ],
                   false
@@ -130,13 +118,13 @@ export const Chart2 = () => {
 
   return (
     <div className="bordered 破获排名">
-      <h2>案件破获排名</h2>
+      <h2>案件类别环比上升</h2>
       <div ref={divRef} className="chart" />
       <div className="legend">
         <span className="first" />
-        破案排名1
+        环比上升
         <span className="second" />
-        破案排名2
+        环比下降
       </div>
     </div>
   );

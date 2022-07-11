@@ -143,7 +143,7 @@ export const Chart3 = () => {
         ].map((obj) => ({
           ...obj,
           symbol: "circle",
-          symbolSize: px(12),
+          symbolSize: px(10),
           lineStyle: { width: px(2) },
         })),
       })

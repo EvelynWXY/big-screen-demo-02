@@ -9,27 +9,24 @@ export const Chart1 = () => {
   const myChart = useRef(null);
   const data = [
     { name: "安宁区", number: 10 },
-    { name: "兰州新区", number: 20 },
-    { name: "兰州新区", number: 36 },
-    { name: "兰州新区", number: 41 },
-    { name: "兰州新区", number: 15 },
-    { name: "兰州新区", number: 26 },
-    { name: "兰州新区", number: 37 },
-    { name: "兰州新区", number: 18 },
-    { name: "兰州新区", number: 29 },
+    { name: "东亿区", number: 20 },
+    { name: "观湖区", number: 36 },
+    { name: "石门区", number: 41 },
+    { name: "天心区", number: 15 },
+    { name: "雨花区", number: 26 },
+    // { name: "兰州新区", number: 37 },
+    // { name: "兰州新区", number: 18 },
+    // { name: "兰州新区", number: 29 },
   ];
   useEffect(() => {
     setInterval(() => {
       const newData = [
         { name: "安宁区", number: Math.random() * 20 },
-        { name: "兰州新区", number: Math.random() * 20 },
-        { name: "兰州新区", number: Math.random() * 20 },
-        { name: "兰州新区", number: Math.random() * 20 },
-        { name: "兰州新区", number: Math.random() * 20 },
-        { name: "兰州新区", number: 26 },
-        { name: "兰州新区", number: Math.random() * 30 },
-        { name: "兰州新区", number: Math.random() * 20 },
-        { name: "兰州新区", number: 29 },
+        { name: "东亿区", number: Math.random() * 20 },
+        { name: "观湖区", number: Math.random() * 20 },
+        { name: "石门区", number: Math.random() * 20 },
+        { name: "天心区", number: Math.random() * 20 },
+        { name: "雨花区", number: Math.random() * 20 },
       ];
       x(newData);
     }, 3000);
@@ -71,6 +68,16 @@ export const Chart1 = () => {
           {
             type: "bar",
             data: data.map((i) => i.number),
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: "#50d6e4",
+              },
+              {
+                offset: 1,
+                color: "#0e242f",
+              },
+            ]),
           },
         ],
       })
